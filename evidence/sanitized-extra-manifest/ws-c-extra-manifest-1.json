@@ -1,0 +1,32 @@
+{
+  "schema": "repo_snapshot_extra_manifest/v1",
+  "createdAt": 1789541352206,
+  "groups": [
+    {
+      "groupId": "global-configs",
+      "changePolicy": "rare",
+      "files": [
+        {
+          "path": "instructions.json",
+          "sizeBytes": 22942,
+          "source": "app-memory:global-instructions"
+        },
+        {
+          "path": "settings.behavior.json",
+          "sizeBytes": 805,
+          "source": "app-memory:global-settings"
+        },
+        {
+          "path": "subagents.json",
+          "sizeBytes": 7046,
+          "source": "app-memory:global-subagents"
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "includedFileCount": 3,
+    "includedBytes": 30793
+  },
+  "note": "sanitized copy: per-file contentHash fields removed; group names/sizes/sources preserved"
+}

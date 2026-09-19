@@ -1,0 +1,9 @@
+# never publish raw/private material
+PRIVATE_EVIDENCE_INDEX.md
+raw-evidence/
+original-artifacts/
+private/
+*.sqlite
+*.asar
+*.enc
+*.pack

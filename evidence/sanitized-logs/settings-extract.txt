@@ -1,0 +1,7 @@
+# WSL /home/<USER>/.zcode/v2/setting.json (mtime: 2026-09-19 03:10 +0800)
+"repoSnapshotIndexingEnabled": true
+"repoSnapshotIndexingUserConfigured": true
+
+# Windows C:\Users\<USER>\.zcode\v2\setting.json (mtime: 2026-09-19 12:25 +0800)
+"repoSnapshotIndexingEnabled": false
+"repoSnapshotIndexingUserConfigured": true

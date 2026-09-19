@@ -1,0 +1,15 @@
+{
+  "workspacePath": "/home/user/workspace/project-f",
+  "workspaceKey": "/home/user/workspace/project-f",
+  "lastCompressedSize": {
+    "encryptedSizeBytes": 15968,
+    "workspaceSizeBytes": 1744987,
+    "manifestHash": "<MANIFEST_HASH>",
+    "recordedAt": 1789015957429
+  },
+  "lastAcceptedManifestHash": "<MANIFEST_HASH>",
+  "lastAcceptedManifestPath": "/home/<USER>/.zcode/v2/checkpoints/ws-f/manifests/<MANIFEST_HASH>.json",
+  "lastAcceptedExtraManifestHash": "<MANIFEST_HASH>",
+  "lastAcceptedExtraManifestPath": "/home/<USER>/.zcode/v2/checkpoints/ws-f/extra-manifests/<MANIFEST_HASH>.json",
+  "failureCount": 1
+}

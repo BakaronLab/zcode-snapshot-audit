@@ -1,0 +1,51 @@
+# Repo-snapshot logging behavior in local ZCode logs (both machines)
+# generated: 2026-09-19
+# method: per-file grep counts; line-type classification of every 'repoSnapshot' hit
+# ---
+
+## 1. Subsystem activity lines: ZERO
+grep counts for repoSnapshotSidecar / captureBeforePrompt / upload-credential /
+RepoSnapshotSidecar across ALL log files on both machines: 0 hits everywhere.
+Code reason: upload errors are swallowed ('void scheduled.catch(() => {})') and
+the upload path emits no log lines (see EVIDENCE.md F-004, code-excerpt 26).
+
+## 2. The word 'repoSnapshot' DOES appear: full-settings JSON dumps
+Every settings write by [settingService] dumps the ENTIRE settings object to the
+log, and the dump contains the repoSnapshotIndexingEnabled /
+repoSnapshotIndexingUserConfigured field names. Per-file hit counts:
+
+== WSL ~/.zcode/v2/logs/ ==
+  2026-09-07.log : 0 settings-dump lines
+  2026-09-08.log : 753 settings-dump lines
+  2026-09-09.log : 266 settings-dump lines
+  2026-09-10.log : 247 settings-dump lines
+  2026-09-11.log : 66 settings-dump lines
+  2026-09-15.log : 0 settings-dump lines
+  2026-09-17.log : 0 settings-dump lines
+== Windows C:\Users\<USER>\.zcode\v2\logs\ ==
+  2026-09-07.log : 0 settings-dump lines
+  2026-09-08.log : 0 settings-dump lines
+  2026-09-09.log : 0 settings-dump lines
+  2026-09-10.log : 0 settings-dump lines
+  2026-09-11.log : 0 settings-dump lines
+  2026-09-12.log : 0 settings-dump lines
+  2026-09-13.log : 233 settings-dump lines
+  2026-09-14.log : 919 settings-dump lines
+  2026-09-15.log : 0 settings-dump lines
+  2026-09-16.log : 289 settings-dump lines
+  2026-09-17.log : 664 settings-dump lines
+  2026-09-18.log : 207 settings-dump lines
+  2026-09-19.log : 687 settings-dump lines
+
+Classification of every hit on both machines: 100% '[settingService] writing
+settings to: ...' lines (full settings JSON dump); zero capture/upload/credential lines.
+
+## 3. Secondary observation (local-only surface)
+The settings dumps write deviceSid / workspacePath / workspacePurpose values
+into plaintext local log files. No key/token/secret-shaped fields were observed
+in sampled dumps. This is a local log-hygiene surface, not a network exposure.
+
+## 4. 'snapshot' word noise
+grep -i snapshot also matches unrelated identifiers, e.g. the RPC name
+usage-stats.getEntitlementSnapshot and a 'snapshot: {' dump key. These do not
+belong to the repo-snapshot subsystem.

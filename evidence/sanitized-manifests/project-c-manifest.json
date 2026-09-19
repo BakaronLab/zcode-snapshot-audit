@@ -1,0 +1,1236 @@
+{
+  "schema": "repo_snapshot_manifest/v2",
+  "workspaceKey": "X:\\workspace\\project-c",
+  "createdAt": 1789649867182,
+  "files": [
+    {
+      "path": ".git/COMMIT_EDITMSG",
+      "sizeBytes": 933
+    },
+    {
+      "path": ".git/config",
+      "sizeBytes": 339
+    },
+    {
+      "path": ".git/description",
+      "sizeBytes": 73
+    },
+    {
+      "path": ".git/HEAD",
+      "sizeBytes": 21
+    },
+    {
+      "path": ".git/hooks/applypatch-msg.sample",
+      "sizeBytes": 478
+    },
+    {
+      "path": ".git/hooks/commit-msg.sample",
+      "sizeBytes": 1972
+    },
+    {
+      "path": ".git/hooks/fsmonitor-watchman.sample",
+      "sizeBytes": 4611
+    },
+    {
+      "path": ".git/hooks/post-update.sample",
+      "sizeBytes": 189
+    },
+    {
+      "path": ".git/hooks/pre-applypatch.sample",
+      "sizeBytes": 424
+    },
+    {
+      "path": ".git/hooks/pre-commit.sample",
+      "sizeBytes": 1649
+    },
+    {
+      "path": ".git/hooks/pre-merge-commit.sample",
+      "sizeBytes": 416
+    },
+    {
+      "path": ".git/hooks/pre-push.sample",
+      "sizeBytes": 1374
+    },
+    {
+      "path": ".git/hooks/pre-rebase.sample",
+      "sizeBytes": 4898
+    },
+    {
+      "path": ".git/hooks/pre-receive.sample",
+      "sizeBytes": 544
+    },
+    {
+      "path": ".git/hooks/prepare-commit-msg.sample",
+      "sizeBytes": 1492
+    },
+    {
+      "path": ".git/hooks/push-to-checkout.sample",
+      "sizeBytes": 2783
+    },
+    {
+      "path": ".git/hooks/sendemail-validate.sample",
+      "sizeBytes": 2308
+    },
+    {
+      "path": ".git/hooks/update.sample",
+      "sizeBytes": 3650
+    },
+    {
+      "path": ".git/index",
+      "sizeBytes": 14669
+    },
+    {
+      "path": ".git/info/exclude",
+      "sizeBytes": 240
+    },
+    {
+      "path": ".git/info/refs",
+      "sizeBytes": 443
+    },
+    {
+      "path": ".git/logs/HEAD",
+      "sizeBytes": 5335
+    },
+    {
+      "path": ".git/logs/refs/heads/<BRANCH>",
+      "sizeBytes": 5335
+    },
+    {
+      "path": ".git/logs/refs/remotes/<REMOTE>/<BRANCH>",
+      "sizeBytes": 431
+    },
+    {
+      "path": ".git/objects/00/<REDACTED>",
+      "sizeBytes": 4079
+    },
+    {
+      "path": ".git/objects/01/<REDACTED>",
+      "sizeBytes": 3865
+    },
+    {
+      "path": ".git/objects/03/<REDACTED>",
+      "sizeBytes": 250054
+    },
+    {
+      "path": ".git/objects/04/<REDACTED>",
+      "sizeBytes": 3900
+    },
+    {
+      "path": ".git/objects/05/<REDACTED>",
+      "sizeBytes": 11713
+    },
+    {
+      "path": ".git/objects/05/<REDACTED>",
+      "sizeBytes": 238559
+    },
+    {
+      "path": ".git/objects/08/<REDACTED>",
+      "sizeBytes": 2728
+    },
+    {
+      "path": ".git/objects/08/<REDACTED>",
+      "sizeBytes": 4143
+    },
+    {
+      "path": ".git/objects/0a/<REDACTED>",
+      "sizeBytes": 12731
+    },
+    {
+      "path": ".git/objects/0a/<REDACTED>",
+      "sizeBytes": 169
+    },
+    {
+      "path": ".git/objects/0b/<REDACTED>",
+      "sizeBytes": 16519
+    },
+    {
+      "path": ".git/objects/0c/<REDACTED>",
+      "sizeBytes": 3002
+    },
+    {
+      "path": ".git/objects/0e/<REDACTED>",
+      "sizeBytes": 941
+    },
+    {
+      "path": ".git/objects/16/<REDACTED>",
+      "sizeBytes": 133
+    },
+    {
+      "path": ".git/objects/18/<REDACTED>",
+      "sizeBytes": 939
+    },
+    {
+      "path": ".git/objects/18/<REDACTED>",
+      "sizeBytes": 144918
+    },
+    {
+      "path": ".git/objects/19/<REDACTED>",
+      "sizeBytes": 939
+    },
+    {
+      "path": ".git/objects/19/<REDACTED>",
+      "sizeBytes": 75
+    },
+    {
+      "path": ".git/objects/19/<REDACTED>",
+      "sizeBytes": 7328
+    },
+    {
+      "path": ".git/objects/1a/<REDACTED>",
+      "sizeBytes": 912
+    },
+    {
+      "path": ".git/objects/1b/<REDACTED>",
+      "sizeBytes": 258111
+    },
+    {
+      "path": ".git/objects/21/<REDACTED>",
+      "sizeBytes": 7498
+    },
+    {
+      "path": ".git/objects/22/<REDACTED>",
+      "sizeBytes": 12062
+    },
+    {
+      "path": ".git/objects/23/<REDACTED>",
+      "sizeBytes": 4373
+    },
+    {
+      "path": ".git/objects/24/<REDACTED>",
+      "sizeBytes": 863
+    },
+    {
+      "path": ".git/objects/26/<REDACTED>",
+      "sizeBytes": 3643
+    },
+    {
+      "path": ".git/objects/28/<REDACTED>",
+      "sizeBytes": 2729
+    },
+    {
+      "path": ".git/objects/29/<REDACTED>",
+      "sizeBytes": 245494
+    },
+    {
+      "path": ".git/objects/29/<REDACTED>",
+      "sizeBytes": 562
+    },
+    {
+      "path": ".git/objects/2b/<REDACTED>",
+      "sizeBytes": 75
+    },
+    {
+      "path": ".git/objects/2d/<REDACTED>",
+      "sizeBytes": 8804
+    },
+    {
+      "path": ".git/objects/32/<REDACTED>",
+      "sizeBytes": 299337
+    },
+    {
+      "path": ".git/objects/35/<REDACTED>",
+      "sizeBytes": 10639
+    },
+    {
+      "path": ".git/objects/38/<REDACTED>",
+      "sizeBytes": 229177
+    },
+    {
+      "path": ".git/objects/38/<REDACTED>",
+      "sizeBytes": 8902
+    },
+    {
+      "path": ".git/objects/39/<REDACTED>",
+      "sizeBytes": 160
+    },
+    {
+      "path": ".git/objects/3b/<REDACTED>",
+      "sizeBytes": 20649
+    },
+    {
+      "path": ".git/objects/3b/<REDACTED>",
+      "sizeBytes": 5734
+    },
+    {
+      "path": ".git/objects/3c/<REDACTED>",
+      "sizeBytes": 3894
+    },
+    {
+      "path": ".git/objects/3c/<REDACTED>",
+      "sizeBytes": 235514
+    },
+    {
+      "path": ".git/objects/3f/<REDACTED>",
+      "sizeBytes": 370
+    },
+    {
+      "path": ".git/objects/40/<REDACTED>",
+      "sizeBytes": 770
+    },
+    {
+      "path": ".git/objects/45/<REDACTED>",
+      "sizeBytes": 139054
+    },
+    {
+      "path": ".git/objects/4a/<REDACTED>",
+      "sizeBytes": 135
+    },
+    {
+      "path": ".git/objects/4b/<REDACTED>",
+      "sizeBytes": 3665
+    },
+    {
+      "path": ".git/objects/4f/<REDACTED>",
+      "sizeBytes": 3879
+    },
+    {
+      "path": ".git/objects/4f/<REDACTED>",
+      "sizeBytes": 1141
+    },
+    {
+      "path": ".git/objects/4f/<REDACTED>",
+      "sizeBytes": 3893
+    },
+    {
+      "path": ".git/objects/52/<REDACTED>",
+      "sizeBytes": 62
+    },
+    {
+      "path": ".git/objects/53/<REDACTED>",
+      "sizeBytes": 168
+    },
+    {
+      "path": ".git/objects/53/<REDACTED>",
+      "sizeBytes": 996
+    },
+    {
+      "path": ".git/objects/53/<REDACTED>",
+      "sizeBytes": 3346
+    },
+    {
+      "path": ".git/objects/58/<REDACTED>",
+      "sizeBytes": 3381
+    },
+    {
+      "path": ".git/objects/59/<REDACTED>",
+      "sizeBytes": 23752
+    },
+    {
+      "path": ".git/objects/5a/<REDACTED>",
+      "sizeBytes": 4145
+    },
+    {
+      "path": ".git/objects/5b/<REDACTED>",
+      "sizeBytes": 80
+    },
+    {
+      "path": ".git/objects/5e/<REDACTED>",
+      "sizeBytes": 2190
+    },
+    {
+      "path": ".git/objects/5e/<REDACTED>",
+      "sizeBytes": 424
+    },
+    {
+      "path": ".git/objects/5f/<REDACTED>",
+      "sizeBytes": 9031
+    },
+    {
+      "path": ".git/objects/5f/<REDACTED>",
+      "sizeBytes": 173
+    },
+    {
+      "path": ".git/objects/5f/<REDACTED>",
+      "sizeBytes": 53
+    },
+    {
+      "path": ".git/objects/5f/<REDACTED>",
+      "sizeBytes": 236795
+    },
+    {
+      "path": ".git/objects/61/<REDACTED>",
+      "sizeBytes": 250209
+    },
+    {
+      "path": ".git/objects/61/<REDACTED>",
+      "sizeBytes": 75
+    },
+    {
+      "path": ".git/objects/68/<REDACTED>",
+      "sizeBytes": 4048
+    },
+    {
+      "path": ".git/objects/6d/<REDACTED>",
+      "sizeBytes": 3859
+    },
+    {
+      "path": ".git/objects/6e/<REDACTED>",
+      "sizeBytes": 3608
+    },
+    {
+      "path": ".git/objects/6f/<REDACTED>",
+      "sizeBytes": 6525
+    },
+    {
+      "path": ".git/objects/79/<REDACTED>",
+      "sizeBytes": 54
+    },
+    {
+      "path": ".git/objects/79/<REDACTED>",
+      "sizeBytes": 31549
+    },
+    {
+      "path": ".git/objects/7a/<REDACTED>",
+      "sizeBytes": 2784
+    },
+    {
+      "path": ".git/objects/7c/<REDACTED>",
+      "sizeBytes": 1087943
+    },
+    {
+      "path": ".git/objects/7c/<REDACTED>",
+      "sizeBytes": 139199
+    },
+    {
+      "path": ".git/objects/7d/<REDACTED>",
+      "sizeBytes": 939
+    },
+    {
+      "path": ".git/objects/80/<REDACTED>",
+      "sizeBytes": 3323
+    },
+    {
+      "path": ".git/objects/80/<REDACTED>",
+      "sizeBytes": 164
+    },
+    {
+      "path": ".git/objects/83/<REDACTED>",
+      "sizeBytes": 244706
+    },
+    {
+      "path": ".git/objects/85/<REDACTED>",
+      "sizeBytes": 10118
+    },
+    {
+      "path": ".git/objects/86/<REDACTED>",
+      "sizeBytes": 245354
+    },
+    {
+      "path": ".git/objects/86/<REDACTED>",
+      "sizeBytes": 323
+    },
+    {
+      "path": ".git/objects/87/<REDACTED>",
+      "sizeBytes": 581
+    },
+    {
+      "path": ".git/objects/89/<REDACTED>",
+      "sizeBytes": 58
+    },
+    {
+      "path": ".git/objects/89/<REDACTED>",
+      "sizeBytes": 370
+    },
+    {
+      "path": ".git/objects/8b/<REDACTED>",
+      "sizeBytes": 8553
+    },
+    {
+      "path": ".git/objects/8e/<REDACTED>",
+      "sizeBytes": 2778
+    },
+    {
+      "path": ".git/objects/8f/<REDACTED>",
+      "sizeBytes": 132369
+    },
+    {
+      "path": ".git/objects/8f/<REDACTED>",
+      "sizeBytes": 144929
+    },
+    {
+      "path": ".git/objects/8f/<REDACTED>",
+      "sizeBytes": 252397
+    },
+    {
+      "path": ".git/objects/94/<REDACTED>",
+      "sizeBytes": 313382
+    },
+    {
+      "path": ".git/objects/96/<REDACTED>",
+      "sizeBytes": 836988
+    },
+    {
+      "path": ".git/objects/99/<REDACTED>",
+      "sizeBytes": 3870
+    },
+    {
+      "path": ".git/objects/99/<REDACTED>",
+      "sizeBytes": 6113
+    },
+    {
+      "path": ".git/objects/9a/<REDACTED>",
+      "sizeBytes": 174
+    },
+    {
+      "path": ".git/objects/9c/<REDACTED>",
+      "sizeBytes": 8578
+    },
+    {
+      "path": ".git/objects/a0/<REDACTED>",
+      "sizeBytes": 4124
+    },
+    {
+      "path": ".git/objects/a2/<REDACTED>",
+      "sizeBytes": 3003
+    },
+    {
+      "path": ".git/objects/a2/<REDACTED>",
+      "sizeBytes": 1161
+    },
+    {
+      "path": ".git/objects/a7/<REDACTED>",
+      "sizeBytes": 4382
+    },
+    {
+      "path": ".git/objects/ab/<REDACTED>",
+      "sizeBytes": 3875
+    },
+    {
+      "path": ".git/objects/ab/<REDACTED>",
+      "sizeBytes": 4104
+    },
+    {
+      "path": ".git/objects/ab/<REDACTED>",
+      "sizeBytes": 5722
+    },
+    {
+      "path": ".git/objects/ab/<REDACTED>",
+      "sizeBytes": 3028
+    },
+    {
+      "path": ".git/objects/ad/<REDACTED>",
+      "sizeBytes": 719
+    },
+    {
+      "path": ".git/objects/ae/<REDACTED>",
+      "sizeBytes": 4409
+    },
+    {
+      "path": ".git/objects/b0/<REDACTED>",
+      "sizeBytes": 256339
+    },
+    {
+      "path": ".git/objects/b2/<REDACTED>",
+      "sizeBytes": 12426
+    },
+    {
+      "path": ".git/objects/b4/<REDACTED>",
+      "sizeBytes": 45
+    },
+    {
+      "path": ".git/objects/b5/<REDACTED>",
+      "sizeBytes": 173
+    },
+    {
+      "path": ".git/objects/b7/<REDACTED>",
+      "sizeBytes": 3821
+    },
+    {
+      "path": ".git/objects/b7/<REDACTED>",
+      "sizeBytes": 288203
+    },
+    {
+      "path": ".git/objects/b8/<REDACTED>",
+      "sizeBytes": 144643
+    },
+    {
+      "path": ".git/objects/ba/<REDACTED>",
+      "sizeBytes": 1087853
+    },
+    {
+      "path": ".git/objects/bf/<REDACTED>",
+      "sizeBytes": 4064
+    },
+    {
+      "path": ".git/objects/c3/<REDACTED>",
+      "sizeBytes": 15853
+    },
+    {
+      "path": ".git/objects/c4/<REDACTED>",
+      "sizeBytes": 3854
+    },
+    {
+      "path": ".git/objects/c5/<REDACTED>",
+      "sizeBytes": 369
+    },
+    {
+      "path": ".git/objects/c5/<REDACTED>",
+      "sizeBytes": 939
+    },
+    {
+      "path": ".git/objects/c5/<REDACTED>",
+      "sizeBytes": 1193
+    },
+    {
+      "path": ".git/objects/c6/<REDACTED>",
+      "sizeBytes": 54
+    },
+    {
+      "path": ".git/objects/c9/<REDACTED>",
+      "sizeBytes": 7434
+    },
+    {
+      "path": ".git/objects/cb/<REDACTED>",
+      "sizeBytes": 6992
+    },
+    {
+      "path": ".git/objects/d0/<REDACTED>",
+      "sizeBytes": 4359
+    },
+    {
+      "path": ".git/objects/d0/<REDACTED>",
+      "sizeBytes": 290185
+    },
+    {
+      "path": ".git/objects/d4/<REDACTED>",
+      "sizeBytes": 912
+    },
+    {
+      "path": ".git/objects/d6/<REDACTED>",
+      "sizeBytes": 3825
+    },
+    {
+      "path": ".git/objects/da/<REDACTED>",
+      "sizeBytes": 143
+    },
+    {
+      "path": ".git/objects/dc/<REDACTED>",
+      "sizeBytes": 12427
+    },
+    {
+      "path": ".git/objects/dc/<REDACTED>",
+      "sizeBytes": 4046
+    },
+    {
+      "path": ".git/objects/dd/<REDACTED>",
+      "sizeBytes": 75
+    },
+    {
+      "path": ".git/objects/df/<REDACTED>",
+      "sizeBytes": 3853
+    },
+    {
+      "path": ".git/objects/e0/<REDACTED>",
+      "sizeBytes": 837100
+    },
+    {
+      "path": ".git/objects/e1/<REDACTED>",
+      "sizeBytes": 247407
+    },
+    {
+      "path": ".git/objects/e3/<REDACTED>",
+      "sizeBytes": 248252
+    },
+    {
+      "path": ".git/objects/e5/<REDACTED>",
+      "sizeBytes": 551
+    },
+    {
+      "path": ".git/objects/e6/<REDACTED>",
+      "sizeBytes": 3885
+    },
+    {
+      "path": ".git/objects/e6/<REDACTED>",
+      "sizeBytes": 262222
+    },
+    {
+      "path": ".git/objects/e9/<REDACTED>",
+      "sizeBytes": 135460
+    },
+    {
+      "path": ".git/objects/ec/<REDACTED>",
+      "sizeBytes": 231156
+    },
+    {
+      "path": ".git/objects/ed/<REDACTED>",
+      "sizeBytes": 3383
+    },
+    {
+      "path": ".git/objects/ee/<REDACTED>",
+      "sizeBytes": 3869
+    },
+    {
+      "path": ".git/objects/f1/<REDACTED>",
+      "sizeBytes": 3006
+    },
+    {
+      "path": ".git/objects/f1/<REDACTED>",
+      "sizeBytes": 6335
+    },
+    {
+      "path": ".git/objects/f3/<REDACTED>",
+      "sizeBytes": 13057
+    },
+    {
+      "path": ".git/objects/f5/<REDACTED>",
+      "sizeBytes": 4152
+    },
+    {
+      "path": ".git/objects/f5/<REDACTED>",
+      "sizeBytes": 939
+    },
+    {
+      "path": ".git/objects/f8/<REDACTED>",
+      "sizeBytes": 3020
+    },
+    {
+      "path": ".git/objects/f9/<REDACTED>",
+      "sizeBytes": 135594
+    },
+    {
+      "path": ".git/objects/f9/<REDACTED>",
+      "sizeBytes": 81
+    },
+    {
+      "path": ".git/objects/fb/<REDACTED>",
+      "sizeBytes": 939
+    },
+    {
+      "path": ".git/objects/fd/<REDACTED>",
+      "sizeBytes": 3925
+    },
+    {
+      "path": ".git/objects/fe/<REDACTED>",
+      "sizeBytes": 132240
+    },
+    {
+      "path": ".git/objects/ff/<REDACTED>",
+      "sizeBytes": 3033
+    },
+    {
+      "path": ".git/objects/info/packs",
+      "sizeBytes": 107
+    },
+    {
+      "path": ".git/objects/pack/multi-pack-index",
+      "sizeBytes": 14376
+    },
+    {
+      "path": ".git/objects/pack/pack-<REDACTED>.idx",
+      "sizeBytes": 14204
+    },
+    {
+      "path": ".git/objects/pack/pack-<REDACTED>.pack",
+      "sizeBytes": 2523192
+    },
+    {
+      "path": ".git/objects/pack/pack-<REDACTED>.rev",
+      "sizeBytes": 1928
+    },
+    {
+      "path": ".git/objects/pack/pack-<REDACTED>.idx",
+      "sizeBytes": 1100
+    },
+    {
+      "path": ".git/objects/pack/pack-<REDACTED>.mtimes",
+      "sizeBytes": 56
+    },
+    {
+      "path": ".git/objects/pack/pack-<REDACTED>.pack",
+      "sizeBytes": 811
+    },
+    {
+      "path": ".git/objects/pack/pack-<REDACTED>.rev",
+      "sizeBytes": 56
+    },
+    {
+      "path": ".git/packed-refs",
+      "sizeBytes": 278
+    },
+    {
+      "path": ".git/refs/heads/<BRANCH>",
+      "sizeBytes": 41
+    },
+    {
+      "path": ".git/refs/remotes/<REMOTE>/<BRANCH>",
+      "sizeBytes": 41
+    },
+    {
+      "path": ".git/refs/remotes/<REMOTE>/<BRANCH>",
+      "sizeBytes": 41
+    },
+    {
+      "path": "anon/0001",
+      "sizeBytes": 608
+    },
+    {
+      "path": "anon/0002.json",
+      "sizeBytes": 629
+    },
+    {
+      "path": "anon/0003.md",
+      "sizeBytes": 1796
+    },
+    {
+      "path": "anon/0004.md",
+      "sizeBytes": 15479
+    },
+    {
+      "path": "anon/0005.md",
+      "sizeBytes": 2811
+    },
+    {
+      "path": "anon/0006.md",
+      "sizeBytes": 32263
+    },
+    {
+      "path": "anon/0007.md",
+      "sizeBytes": 5720
+    },
+    {
+      "path": "anon/0008.md",
+      "sizeBytes": 4370
+    },
+    {
+      "path": "anon/0009.md",
+      "sizeBytes": 37336
+    },
+    {
+      "path": "anon/0010.json",
+      "sizeBytes": 50636
+    },
+    {
+      "path": "anon/0011.json",
+      "sizeBytes": 18437
+    },
+    {
+      "path": "anon/0012.json",
+      "sizeBytes": 21115
+    },
+    {
+      "path": "anon/0013.json",
+      "sizeBytes": 18354
+    },
+    {
+      "path": "anon/0014.json",
+      "sizeBytes": 20873
+    },
+    {
+      "path": "anon/0015.json",
+      "sizeBytes": 19210
+    },
+    {
+      "path": "anon/0016.json",
+      "sizeBytes": 19179
+    },
+    {
+      "path": "anon/0017.json",
+      "sizeBytes": 19132
+    },
+    {
+      "path": "anon/0018.json",
+      "sizeBytes": 14688
+    },
+    {
+      "path": "anon/0019.json",
+      "sizeBytes": 14690
+    },
+    {
+      "path": "anon/0020.json",
+      "sizeBytes": 14668
+    },
+    {
+      "path": "anon/0021.json",
+      "sizeBytes": 14622
+    },
+    {
+      "path": "anon/0022.json",
+      "sizeBytes": 14692
+    },
+    {
+      "path": "anon/0023.json",
+      "sizeBytes": 14672
+    },
+    {
+      "path": "anon/0024.json",
+      "sizeBytes": 29041
+    },
+    {
+      "path": "anon/0025.json",
+      "sizeBytes": 28930
+    },
+    {
+      "path": "anon/0026.json",
+      "sizeBytes": 28872
+    },
+    {
+      "path": "anon/0027.json",
+      "sizeBytes": 33195
+    },
+    {
+      "path": "anon/0028.json",
+      "sizeBytes": 20014
+    },
+    {
+      "path": "anon/0029.json",
+      "sizeBytes": 18451
+    },
+    {
+      "path": "anon/0030.json",
+      "sizeBytes": 18445
+    },
+    {
+      "path": "anon/0031.json",
+      "sizeBytes": 20104
+    },
+    {
+      "path": "anon/0032.json",
+      "sizeBytes": 18814
+    },
+    {
+      "path": "anon/0033.json",
+      "sizeBytes": 18787
+    },
+    {
+      "path": "anon/0034.json",
+      "sizeBytes": 18742
+    },
+    {
+      "path": "anon/0035.json",
+      "sizeBytes": 18819
+    },
+    {
+      "path": "anon/0036.json",
+      "sizeBytes": 18792
+    },
+    {
+      "path": "anon/0037.json",
+      "sizeBytes": 18747
+    },
+    {
+      "path": "anon/0038.json",
+      "sizeBytes": 205275
+    },
+    {
+      "path": "anon/0039.json",
+      "sizeBytes": 20017
+    },
+    {
+      "path": "anon/0040.json",
+      "sizeBytes": 19984
+    },
+    {
+      "path": "anon/0041.json",
+      "sizeBytes": 19937
+    },
+    {
+      "path": "anon/0042.json",
+      "sizeBytes": 138
+    },
+    {
+      "path": "anon/0043.json",
+      "sizeBytes": 357
+    },
+    {
+      "path": "anon/0044.json",
+      "sizeBytes": 1181
+    },
+    {
+      "path": "anon/0045.json",
+      "sizeBytes": 1013
+    },
+    {
+      "path": "anon/0046.json",
+      "sizeBytes": 8384
+    },
+    {
+      "path": "anon/0047.txt",
+      "sizeBytes": 2005
+    },
+    {
+      "path": "anon/0048.json",
+      "sizeBytes": 97
+    },
+    {
+      "path": "anon/0049.json",
+      "sizeBytes": 844
+    },
+    {
+      "path": "anon/0050.txt",
+      "sizeBytes": 41
+    },
+    {
+      "path": "anon/0051.json",
+      "sizeBytes": 377
+    },
+    {
+      "path": "anon/0052.txt",
+      "sizeBytes": 2175
+    },
+    {
+      "path": "anon/0053.ps1",
+      "sizeBytes": 7021
+    },
+    {
+      "path": "anon/0054.txt",
+      "sizeBytes": 971
+    },
+    {
+      "path": "anon/0055.txt",
+      "sizeBytes": 518
+    },
+    {
+      "path": "anon/0056.ps1",
+      "sizeBytes": 3131
+    },
+    {
+      "path": "anon/0057.ps1",
+      "sizeBytes": 1755
+    },
+    {
+      "path": "anon/0058.md",
+      "sizeBytes": 8762
+    },
+    {
+      "path": "anon/0059.txt",
+      "sizeBytes": 769
+    },
+    {
+      "path": "anon/0060.txt",
+      "sizeBytes": 774
+    },
+    {
+      "path": "anon/0061.txt",
+      "sizeBytes": 2114
+    },
+    {
+      "path": "anon/0062.ps1",
+      "sizeBytes": 35556
+    },
+    {
+      "path": "anon/0063.ps1",
+      "sizeBytes": 10931
+    },
+    {
+      "path": "anon/0064.ps1",
+      "sizeBytes": 21560
+    },
+    {
+      "path": "anon/0065.vbs",
+      "sizeBytes": 940
+    },
+    {
+      "path": "anon/0066.ps1",
+      "sizeBytes": 29936
+    },
+    {
+      "path": "anon/0067",
+      "sizeBytes": 1547
+    },
+    {
+      "path": "anon/0068.LICENSE",
+      "sizeBytes": 1107
+    },
+    {
+      "path": "anon/0069.LICENSE",
+      "sizeBytes": 1087
+    },
+    {
+      "path": "anon/0070.json",
+      "sizeBytes": 521
+    },
+    {
+      "path": "anon/0071.json",
+      "sizeBytes": 95011
+    },
+    {
+      "path": "anon/0072.json",
+      "sizeBytes": 1468
+    },
+    {
+      "path": "anon/0073.md",
+      "sizeBytes": 12910
+    },
+    {
+      "path": "anon/0074.md",
+      "sizeBytes": 12414
+    },
+    {
+      "path": "anon/0075.ps1",
+      "sizeBytes": 44675
+    },
+    {
+      "path": "anon/0076.md",
+      "sizeBytes": 5201
+    },
+    {
+      "path": "anon/0077.mjs",
+      "sizeBytes": 1550
+    },
+    {
+      "path": "anon/0078.mjs",
+      "sizeBytes": 2636
+    },
+    {
+      "path": "anon/0079.md",
+      "sizeBytes": 2113
+    },
+    {
+      "path": "anon/0080.mjs",
+      "sizeBytes": 5738
+    },
+    {
+      "path": "anon/0081.js",
+      "sizeBytes": 4622
+    },
+    {
+      "path": "anon/0082.mjs",
+      "sizeBytes": 9282
+    },
+    {
+      "path": "anon/0083.mjs",
+      "sizeBytes": 6586
+    },
+    {
+      "path": "anon/0084.md",
+      "sizeBytes": 15425
+    },
+    {
+      "path": "anon/0085.md",
+      "sizeBytes": 5598
+    },
+    {
+      "path": "anon/0086.ts",
+      "sizeBytes": 14846
+    },
+    {
+      "path": "anon/0087.ts",
+      "sizeBytes": 7433
+    },
+    {
+      "path": "anon/0088.ts",
+      "sizeBytes": 10557
+    },
+    {
+      "path": "anon/0089.ts",
+      "sizeBytes": 9139
+    },
+    {
+      "path": "anon/0090.ts",
+      "sizeBytes": 2163
+    },
+    {
+      "path": "anon/0091.ts",
+      "sizeBytes": 7193
+    },
+    {
+      "path": "anon/0092.ts",
+      "sizeBytes": 8669
+    },
+    {
+      "path": "anon/0093.ts",
+      "sizeBytes": 7023
+    },
+    {
+      "path": "anon/0094.ts",
+      "sizeBytes": 4935
+    },
+    {
+      "path": "anon/0095.ts",
+      "sizeBytes": 3095
+    },
+    {
+      "path": "anon/0096.ts",
+      "sizeBytes": 19875
+    },
+    {
+      "path": "anon/0097.ts",
+      "sizeBytes": 3574
+    },
+    {
+      "path": "anon/0098.ts",
+      "sizeBytes": 11918
+    },
+    {
+      "path": "anon/0099.ts",
+      "sizeBytes": 24015
+    },
+    {
+      "path": "anon/0100.ts",
+      "sizeBytes": 16656
+    },
+    {
+      "path": "anon/0101.mjs",
+      "sizeBytes": 3871
+    },
+    {
+      "path": "anon/0102.mjs",
+      "sizeBytes": 9776
+    },
+    {
+      "path": "anon/0103.mjs",
+      "sizeBytes": 2339
+    },
+    {
+      "path": "anon/0104.mjs",
+      "sizeBytes": 3868
+    },
+    {
+      "path": "anon/0105.mjs",
+      "sizeBytes": 18037
+    },
+    {
+      "path": "anon/0106.mjs",
+      "sizeBytes": 3127
+    },
+    {
+      "path": "anon/0107.mjs",
+      "sizeBytes": 6856
+    },
+    {
+      "path": "anon/0108.mjs",
+      "sizeBytes": 7179
+    },
+    {
+      "path": "anon/0109.mjs",
+      "sizeBytes": 4688
+    },
+    {
+      "path": "anon/0110.md",
+      "sizeBytes": 5586
+    },
+    {
+      "path": "anon/0111.mjs",
+      "sizeBytes": 91534
+    },
+    {
+      "path": "anon/0112.ps1",
+      "sizeBytes": 25471
+    },
+    {
+      "path": "anon/0113.mjs",
+      "sizeBytes": 44794
+    },
+    {
+      "path": "anon/0114.ps1",
+      "sizeBytes": 39298
+    },
+    {
+      "path": "anon/0115.json",
+      "sizeBytes": 393
+    },
+    {
+      "path": "anon/0116.json",
+      "sizeBytes": 91
+    },
+    {
+      "path": "anon/0117.ps1",
+      "sizeBytes": 34599
+    }
+  ],
+  "stats": {
+    "includedFileCount": 306,
+    "includedBytes": 15102726
+  },
+  "note": "sanitized copy: workspace file names outside .git/ replaced with anon/NNNN.<ext>; git object ids / pack names / branch & remote names / checkpoint ids redacted; sizes preserved"
+}
