@@ -4,7 +4,7 @@
 
 ## Executive Summary
 
-In the audited build, a logged-in ZCode client captures a complete archive of the workspace — including the full `.git` directory (history objects, pack files, reflog, config), the full text of every user prompt, and the user's global agent configuration files — before each prompt and on successful task completion. The archive is encrypted with AES-256-CTR under a randomly generated data key, the data key is wrapped with an RSA public key delivered by the ZCode server, and the encrypted archive is uploaded to an Aliyun OSS host whose credentials the server delivers at upload time. Because the wrapped data key is returned to the server through the OSS callback, the server possesses the corresponding capability to decrypt every snapshot under this envelope-encryption design. The client-side setting `repoSnapshotIndexingEnabled` does not gate capture or upload anywhere in the audited server bundle; the snapshot sidecar is instantiated unconditionally. The user-visible "checkpoint" rollback feature is a separate, purely local git-refs mechanism.
+In the audited build, a logged-in ZCode client captures a complete archive of the workspace — including `.git` metadata (history objects, pack files, reflog, config; regular files under `.git`, with the symlink exclusion still applying), the full text of the user prompt, and the user's global agent configuration files — before each capture-eligible prompt and on successful task completion. Prompt-stage capture is gated by the workspaceIdentity, authentication, credential, and quota preconditions (F-031 for the workspaceIdentity gate); when a capture occurs, the full user prompt text is packaged. The archive is encrypted with AES-256-CTR under a randomly generated data key, the data key is wrapped with an RSA public key delivered by the ZCode server, and the encrypted archive is uploaded to an Aliyun OSS host whose credentials the server delivers at upload time. Because the wrapped data key is returned to the server through the OSS callback, the server possesses the corresponding capability to decrypt every snapshot under this envelope-encryption design. The client-side setting `repoSnapshotIndexingEnabled` does not gate capture or upload anywhere in the audited server bundle; the snapshot sidecar is instantiated unconditionally. The user-visible "checkpoint" rollback feature is a separate, purely local git-refs mechanism.
 
 These statements describe client-side behavior only. This audit makes no claims about server-side retention, indexing, training use, or personnel access; those are listed as unknowns.
 
@@ -49,11 +49,13 @@ Every finding: [EVIDENCE.md](EVIDENCE.md).
 ```
 workspace (incl. .git/**)
   │ (1) git ls-files --cached --others --exclude-standard        [server.cjs ~310540, ~310596]
-  │ (2) appendRootGitMetadataPaths + walkGitMetadataFiles         [~310624] re-add the whole .git dir
+  │ (2) appendRootGitMetadataPaths + walkGitMetadataFiles         [~310624] re-add .git metadata (regular files)
   ▼
 scanner/filter — excludes node_modules/.cache/.turbo/dist/build/out/.next/coverage,
-  │              .env*/.npmrc/id_rsa*/token|secret paths, symlinks, binaries, files >1 MB
-  │              BUT the .git short-circuit runs BEFORE all of these               [~310488]
+  │              .env*/.npmrc/id_rsa*/token|secret paths, files >1 MB
+  │              symlink exclusion runs BEFORE the .git short-circuit (still applies inside .git)
+  │              the .git short-circuit bypasses the secret-path filter and the 1 MB size check  [~310488]
+  │              binary/content sampling happens at a later stage
   ▼
 tar (self-implemented Node tar) + gzip                                           [~310121, ~309820]
   │   meta/prompt.json           ← full user prompt text                         [233388-233397]
@@ -79,18 +81,18 @@ No standalone client-side embedding/vector-index subsystem was identified (F-029
 
 ## Snapshot Triggering
 
-- Before **every prompt**: `sendPrompt` → `scheduleRepoSnapshotSidecar` → `captureBeforePrompt` with `captureStage: "prompt"` and `content: params.prompt.content` (server.cjs ~233379, ~234473; excerpts 07/23). [CONFIRMED-CODE]
+- Before **each prompt** (trigger wiring): `sendPrompt` → `scheduleRepoSnapshotSidecar` → `captureBeforePrompt` with `captureStage: "prompt"` and `content: params.prompt.content` (server.cjs ~233379, ~234473; excerpts 07/23). The invocation is on the prompt path; whether capture proceeds is decided by the eligibility gates below. [CONFIRMED-CODE]
 - On **successful task completion**: `captureTaskCompleteUpdate` → `captureRepoWikiSnapshot` → `captureBeforePrompt` with `captureStage: "terminal"`, `content: "repo-wiki-update"` (server.cjs ~308831-308842; excerpt 13). The task-completion hook fires only for terminal transitions where the task did not fail and capture is enabled (`!failed && captureRepoSnapshot`, excerpt 26); failed tasks do not capture. [CONFIRMED-CODE]
 - **Suppression condition**: `captureBeforePrompt` returns immediately when `workspaceIdentity` (the remote-session workspace identifier) is non-empty (excerpt 24); the same check exists in the desktop bundle (excerpt 32). [CONFIRMED-CODE]
 - Other preconditions observed in code: OAuth token present, credential obtainable from the server, disk-quota check (default per-snapshot max 2 GB, excerpt 31). [CONFIRMED-CODE]
 
 ## Workspace Enumeration
 
-Enumeration starts from `git ls-files --cached --others --exclude-standard`, so untracked-but-unignored files are included; directory traversal then excludes `.git` via `skipDirectoryNames = {".git"}`, after which `appendRootGitMetadataPaths` + `walkGitMetadataFiles` explicitly re-add the entire `.git` tree (excerpt 11). [CONFIRMED-CODE]
+Enumeration starts from `git ls-files --cached --others --exclude-standard`, so untracked-but-unignored files are included; directory traversal then excludes `.git` via `skipDirectoryNames = {".git"}`, after which `appendRootGitMetadataPaths` + `walkGitMetadataFiles` explicitly re-add the `.git` metadata tree — regular files under `.git` enter snapshot scope (excerpt 11; the symlink exclusion still applies inside `.git`, see *Git Filter Behavior*). [CONFIRMED-CODE]
 
 ## Git Metadata Handling
 
-`walkGitMetadataFiles` recursively collects everything under `.git/`. The manifests of three real workspaces show `.git/**` entries at 61.8%–89.5% of all archive entries, including `.git/objects/**` (3927/427/161 entries), `.git/logs/HEAD` (reflog, up to 145,943 B), `.git/config`, `.git/index`, `.git/lost-found/**`, and `.git/worktrees/<name>/**` (excerpt 11; statistics in evidence/manifest-statistics.md; sanitized manifests included). [CONFIRMED-CODE] + [CONFIRMED-LOCAL-ARTIFACT]
+`walkGitMetadataFiles` recursively enumerates `.git/` metadata, and regular files under `.git/` are added to snapshot scope (the symlink exclusion still applies — *Git Filter Behavior*). The manifests of three real workspaces show `.git/**` entries at 61.8%–89.5% of all archive entries, including `.git/objects/**` (3927/427/161 entries), `.git/logs/HEAD` (reflog, up to 145,943 B), `.git/config`, `.git/index`, `.git/lost-found/**`, and `.git/worktrees/<name>/**` (excerpt 11; statistics in evidence/manifest-statistics.md; sanitized manifests included). [CONFIRMED-CODE] + [CONFIRMED-LOCAL-ARTIFACT]
 
 ## Git Filter Behavior
 
@@ -102,11 +104,11 @@ if (isRootGitMetadataFile(params.repoRelativePath) || hasGitInternalSegment(segm
 }
 ```
 
-precedes the secret-path check (`looksLikeSecretPath`, ~310515) and the size check (`sizeBytes > REPO_SNAPSHOT_MAX_FILE_BYTES`, ~310518), so **those filters are ineffective for `.git/**`** (excerpt 10). One earlier filter does still apply: the symbolic-link exclusion (~310500) precedes the `.git` short-circuit, so symlinked entries are excluded even inside `.git` (no symlink entries occur in the observed manifests). Real manifests contain a 4,540,393-byte `.pack` and ~1.09 MB loose objects, proving the 1 MB limit does not apply to `.git`. [CONFIRMED-CODE] + [CONFIRMED-LOCAL-ARTIFACT]
+precedes the secret-path check (`looksLikeSecretPath`, ~310515) and the size check (`sizeBytes > REPO_SNAPSHOT_MAX_FILE_BYTES`, ~310518), so **those filters are ineffective for `.git/**`** (excerpt 10). One earlier filter does still apply: the symbolic-link exclusion (~310500) precedes the `.git` short-circuit, so symlinked entries are excluded even inside `.git` (no symlink entries occur in the observed manifests). Binary/content sampling is not part of this pre-sample filter: it operates at a later stage in the pipeline (excerpt 10). Real manifests contain a 4,540,393-byte `.pack` and ~1.09 MB loose objects, proving the 1 MB limit does not apply to `.git`. [CONFIRMED-CODE] + [CONFIRMED-LOCAL-ARTIFACT]
 
 ## Secret Filtering
 
-The exclusion set (`secretBasenames = {.env, .env.local, .env.development, .env.production, .npmrc, id_rsa, id_dsa, id_ecdsa, id_ed25519}`, paths containing `token`/`secret`, symlinks, binaries) operates only outside `.git` (excerpt 10). Consequence: secrets that live inside git objects — e.g. credentials embedded in `.git/config` remote URLs, or secrets present in historical commits — are inside the upload scope. This audit does not claim any particular secret was uploaded; it establishes that the filter layer provides no protection inside `.git`. [CONFIRMED-CODE]
+The secret-path exclusion set (`secretBasenames = {.env, .env.local, .env.development, .env.production, .npmrc, id_rsa, id_dsa, id_ecdsa, id_ed25519}`, basenames containing `token`/`secret`) operates only outside `.git` — the `.git` short-circuit precedes it (excerpt 10). The symlink exclusion precedes the short-circuit and therefore still applies inside `.git`. Binary/content sampling is a separate, later stage (excerpt 10). Consequence: secrets that live inside git objects — e.g. credentials embedded in `.git/config` remote URLs, or secrets present in historical commits — are inside the upload scope. This audit does not claim any particular secret was uploaded; it establishes that the secret-path filter layer provides no protection inside `.git`. [CONFIRMED-CODE]
 
 ## Prompt Packaging
 
@@ -134,8 +136,8 @@ So no — Repo Wiki does not merely upload generated wiki text; its lifecycle is
 | | Local "checkpoint" (user-visible rollback) | Repo snapshot (this audit's subject) |
 |---|---|---|
 | Storage | git refs `refs/zcode/checkpoints/<workspaceHash>/<id>` in the workspace repo | encrypted `tar.gz` uploaded to OSS; local state/manifests only |
-| Content | workspace files | file contents + all of `.git/**` + full prompt + global configs |
-| Network | none observed | before every prompt + on successful task completion (capture-enabled transitions) |
+| Content | workspace files | file contents + regular files under `.git/**` + full prompt + global configs |
+| Network | none observed | before each capture-eligible prompt + on successful task completion (capture-enabled transitions; F-031 gates) |
 | Restore | `git restore` (excerpt 30) | **no download/restore endpoint found** (`restore|download` grep: 0 hits in both bundles) |
 | Identity | `GIT_AUTHOR_EMAIL: "checkpoint@zcode.local"` (excerpt 29) | attribution metadata in callback |
 
@@ -212,8 +214,8 @@ Status vocabulary: CONFIRMED / PARTIALLY CONFIRMED / INFERRED / UNKNOWN / NOT OB
 
 ## Confirmed Facts
 
-1. Every prompt, and every successful capture-enabled task completion, (logged in, credential available, quota OK, non-remote workspace) produces a full workspace snapshot archive including all of `.git/**`, the prompt text, and global configs. [CONFIRMED-CODE + CONFIRMED-LOCAL-ARTIFACT]
-2. The `.git` short-circuit bypasses secret-path, binary, and 1 MB size filtering; >1 MB pack files appear in real manifests. [CONFIRMED-CODE + CONFIRMED-LOCAL-ARTIFACT]
+1. Each capture-eligible prompt (logged in, credential available, quota OK, and passing the `workspaceIdentity` gate — i.e. non-remote-session workspaces) and each successful capture-enabled task completion produces a full workspace snapshot archive including `.git` metadata (regular files under `.git/**`), the prompt text, and global configs. [CONFIRMED-CODE + CONFIRMED-LOCAL-ARTIFACT]
+2. The `.git` short-circuit bypasses secret-path filtering and the 1 MB per-file size check; the symlink exclusion still applies inside `.git`, and binary/content sampling occurs later in the pipeline; >1 MB pack files appear in real manifests. [CONFIRMED-CODE + CONFIRMED-LOCAL-ARTIFACT]
 3. Envelope encryption wraps the random data key with a server-delivered RSA public key and returns it to the server via the OSS callback; the server possesses the decryption capability by design. [CONFIRMED-CODE]
 4. `repoSnapshotIndexingEnabled` does not gate capture or upload in the audited server bundle; the sidecar is constructed unconditionally; the setting's value is itself uploaded. [CONFIRMED-CODE]
 5. All 7 observed workspaces have `lastAcceptedManifestHash` — the client's own marker, written only after its upload path reports success (server-side processing beyond the callback delivery is unobserved). Pending artifacts are cleaned after success. [CONFIRMED-LOCAL-ARTIFACT]

@@ -4,8 +4,8 @@ Scope: client-side behavior of the audited ZCode build. This document describes 
 
 ## Assets leaving the machine (confirmed)
 
-- Workspace file contents (source code and everything else scanned), including the **entire `.git` directory** (regular files; the symlink exclusion applies first): history objects, pack files (any size), reflog (`logs/HEAD`, which contains commit metadata such as author identity), `config` (which can contain remote URLs, potentially with embedded credentials), `index`, `lost-found`, worktree metadata.
-- The full text of every user prompt.
+- Workspace file contents (source code and everything else scanned), including **`.git` metadata** (regular files under `.git`; the symlink exclusion applies first and still applies inside `.git`): history objects, pack files (any size), reflog (`logs/HEAD`, which contains commit metadata such as author identity), `config` (which can contain remote URLs, potentially with embedded credentials), `index`, `lost-found`, worktree metadata.
+- The full user prompt text, packaged whenever a capture occurs (prompt-stage capture is subject to the eligibility gates in F-031).
 - Global agent configuration: `mcp.json`, `hooks.json`, `memory.json`, `instructions.json`, `subagents.json`, `skills.json`, `commands.json`, `plugins.json`, `settings.behavior.json` — redacted only by key-name pattern.
 - Attribution metadata (session/query/request ids, capture stage, failure count) and the plaintext snapshot checksum.
 - Separate channel: device identifier (`deviceMid` via `X-Device-Mid`) and telemetry endpoints (ARMS RUM, SLS).

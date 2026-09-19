@@ -6,7 +6,7 @@ Primary external source: blog analysis "扒一扒 ZCode 静默上传全量 Git �
 
 | # | Third-party finding | Local status | Local evidence |
 |---|---|---|---|
-| 1 | A snapshot of the workspace is silently uploaded before each prompt | **REPRODUCED** | F-002 (code), F-020 (accepted-state artifacts) |
+| 1 | A snapshot of the workspace is silently uploaded before each prompt | **REPRODUCED** (code-level trigger) | F-002 (code; capture itself is additionally gated by F-031 preconditions), F-020 (accepted-state artifacts) |
 | 2 | Upload content includes file contents and full `.git` history (objects/pack) | **REPRODUCED** | F-003, F-008 (manifests: 61.8–89.5% `.git/**`) |
 | 3 | Large pack files exceed the nominal 1 MB file limit | **REPRODUCED** | F-009 (4.5 MB / 2.5 MB packs in real manifests) |
 | 4 | The `repoSnapshotIndexingEnabled` switch does not stop capture/upload | **REPRODUCED** | F-022 (all 4 occurrences non-gating; sidecar unconditional) |
