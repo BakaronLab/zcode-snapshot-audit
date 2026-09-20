@@ -61,8 +61,8 @@ In the audited 3.14.0 client artifacts:
 3. **The prompt-stage hook is gone from a module that still exists.** `zcodeAgentService.ts`
    survives (and grew by +5,503 B), but every capture-related symbol is absent from it.
    → [DELTA.md](DELTA.md)
-4. **All 20 required symbol probes read zero on both new artifacts**, while the control surfaces
-   survive byte-identically. → [SYMBOL-DIFF.md](SYMBOL-DIFF.md)
+4. **All 20 required symbol probes read zero across the audited 3.14.0 artifacts**, while the
+   control surfaces survive byte-identically. → [SYMBOL-DIFF.md](SYMBOL-DIFF.md)
 5. **A calibrated five-signal combination test isolates the old subsystem and returns nothing on
    3.14.0.** → [SNAPSHOT-HIT-CLASSIFICATION.md](SNAPSHOT-HIT-CLASSIFICATION.md)
 6. **The residual OSS/upload surface is a different, user-initiated feature** (feedback
