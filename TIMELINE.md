@@ -20,7 +20,7 @@ All times local (+0800). Workspace identities anonymized (ws-a…ws-g ↔ projec
 | 2026-09-10 16:41 | ws-d | upload-success marker present |
 | 2026-09-10 16:55 | ws-e | upload-success marker present |
 | 2026-09-11 15:37 | ws-a | upload-success marker present; largest observed manifest (5,067 files, 82.7% `.git/**`) |
-| 2026-09-17 20:57 | ws-c (Windows side) | **post-dates the audited desktop build (2026-09-04)** and |
+| 2026-09-17 20:57 | ws-c (Windows side) | **post-dates the audited desktop build (2026-09-04)** and anchors the observed capture behavior to the audited artifacts (F-034) |
 
 All 7 state files contain the client-recorded upload-success marker `lastAcceptedManifestHash` (F-020). `failureCount` values 1–3 indicate retry activity (F-021).
 
