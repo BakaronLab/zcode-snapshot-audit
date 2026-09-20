@@ -45,7 +45,7 @@ relocation, these are **the only application-level clusters removed**.
 Module set totals for the server bundle: 1377 → 1086 module-path comments, 1297 → 1020 unique
 modules, **346 removed / 69 added**. → [MODULE-CLUSTER-DIFF.md](MODULE-CLUSTER-DIFF.md)
 
-### 2. All 20 required symbol probes read zero on both new artifacts
+### 2. All 20 required symbol probes read zero across the audited 3.14.0 artifacts
 
 `RepoSnapshotSidecarService`, `repoSnapshot`, `RepoSnapshot`, `captureBeforePrompt`,
 `scheduleRepoSnapshotSidecar`, `captureRepoWikiSnapshot`, `repo-wiki-update`,
@@ -115,7 +115,7 @@ for `.git` entries. The flags array that drove enumeration
 (`walkGitMetadataFiles`), its re-add helper (`appendRootGitMetadataPaths`), the skip-set
 (`skipDirectoryNames`), the pre-sample decision function
 (`shouldIncludeRepoSnapshotPathBeforeSample`) and the filter module itself are all **absent** from
-3.14.0 (0 occurrences on both new artifacts).
+3.14.0 (0 occurrences across the audited 3.14.0 artifacts).
 
 The supported statement is therefore: **the old `.git` inclusion path is no longer reachable or
 identifiable, because no equivalent repo-capture subsystem was identified.** This is a different

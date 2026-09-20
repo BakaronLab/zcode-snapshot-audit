@@ -38,7 +38,7 @@ fd9903feb14926eabe1e7d472e2c7efcfbb022873bbd4078da914ae1b2559061  ./evidence/san
 6bc155cfc317a86b205069dea2d671a8b86a1084672496ca85972348c6b0aa9f  ./evidence/sanitized-state/ws-g-state.json
 c1fce84593ee4a4e924a7bcb3ba9d71d9f2f08b677f65de113e2aeeb9ba410ce  ./evidence/sqlite-schema.txt
 8443aaf12c93405337ee0ea950e9cf1b61fa7471ece9a25976e5ba44dc1076a5  ./evidence/telemetry-map.md
-5f7f5fce08277f1edada3cb6725a0e3ba30f956bc3662c66c0bee5495103d136  ./followup-3.14/DELTA.md
+abbb7ce7e738e0b0a7eb44a7d30c0c2aa1a899f7ca71c198c257aa7306f97ebf  ./followup-3.14/DELTA.md
 654da8c44f39d654b331567e227475623cf9cdf426d56959c37f2a6e4d8e6d82  ./followup-3.14/MODULE-CLUSTER-DIFF.md
 836e6066d8d54dd4512cc3093150aff871cf0add4c956180dd806681edf677f7  ./followup-3.14/README.md
 c16cf9f7d98cfa5d0f63a2c293f0a75a6b381a4e589a8cd0fd31f86bb72ff3e5  ./followup-3.14/REGRESSION-MATRIX.md
