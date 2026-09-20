@@ -2,6 +2,12 @@
 
 [English](#confirmed-client-side-behavior--已确认的客户端行为) · [中文](#中文对照)
 
+## Version follow-up · 版本跟进
+
+**EN.** Update: in the audited ZCode 3.14.0 client artifacts, the client-side repo-snapshot / Repo Wiki module clusters documented below are no longer present. A separate regression audit is available in [followup-3.14/](followup-3.14/README.md). The original findings remain historical findings for the hashed earlier builds.
+
+**中文.** 更新：在本次审计的 ZCode 3.14.0 客户端工件中，下文记录的客户端 repo-snapshot / Repo Wiki 模块簇已不再存在。独立回归审计见 [followup-3.14/](followup-3.14/README.md)。原始 findings 仍是针对已固定哈希旧构建的历史结论。
+
 This repository documents independently verifiable client-side behavior observed in a locally installed ZCode build. It does **not** make unsupported claims about:
 
 本仓库记录在本地安装的 ZCode 构建中观察到的、可独立验证的客户端行为。它不做出以下无证据支持的断言（English is canonical; 中文为对照译文）：
