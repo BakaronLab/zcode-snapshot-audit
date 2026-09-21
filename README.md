@@ -1,7 +1,9 @@
 # ZCode Snapshot Audit
 
-> ### 🤖 本 Repo 由 ZCode Harness 与 DeepSeek 4.1 Flash 倾情构建
+> ### 🤖 本 Repo 由 ZCode Harness 与 DeepSeek-V4.1-Flash 倾情构建
 > *Auditing ZCode, with ZCode.*
+>
+> *Then ZCode open-sourced.*
 
 [English](#confirmed-client-side-behavior--已确认的客户端行为) · [中文](#中文对照)
 
