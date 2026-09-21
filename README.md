@@ -1,5 +1,8 @@
 # ZCode Snapshot Audit
 
+> ### 🤖 本 Repo 由 ZCode Harness 与 DeepSeek 4.1 Flash 倾情构建
+> *Auditing ZCode, with ZCode.*
+
 [English](#confirmed-client-side-behavior--已确认的客户端行为) · [中文](#中文对照)
 
 ## Version follow-up · 版本跟进
@@ -7,6 +10,12 @@
 **EN.** Update: in the audited ZCode 3.14.0 client artifacts, the client-side repo-snapshot / Repo Wiki module clusters documented below are no longer present. A separate regression audit is available in [followup-3.14/](followup-3.14/README.md). The original findings remain historical findings for the hashed earlier builds.
 
 **中文.** 更新：在本次审计的 ZCode 3.14.0 客户端工件中，下文记录的客户端 repo-snapshot / Repo Wiki 模块簇已不再存在。独立回归审计见 [followup-3.14/](followup-3.14/README.md)。原始 findings 仍是针对已固定哈希旧构建的历史结论。
+
+## Official-source follow-up / 官方开源源码跟进
+
+**EN.** ZCode subsequently published its 3.14.0 source code. A source-level corroboration of the earlier binary findings is available in [followup-open-source/](followup-open-source/README.md). The official source tree independently corroborates the removal of the audited repo-snapshot / Repo Wiki client implementation, while not establishing exact source identity with the previously frozen shipped binaries.
+
+**中文.** ZCode 后续公开了 3.14.0 源码。针对既有二进制审计结论的源码级交叉验证见 [followup-open-source/](followup-open-source/README.md)。官方源码树独立印证了此前审计到的 repo-snapshot / Repo Wiki 客户端实现已被移除，但目前不据此主张公开源码与此前冻结的发行二进制具有精确源码同一性。
 
 This repository documents independently verifiable client-side behavior observed in a locally installed ZCode build. It does **not** make unsupported claims about:
 
